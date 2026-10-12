@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "SwarmCoreIMD",
+    "name": "SwarmCoreIMD",
+    "symbol": "SWARMCORE",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x6bf192ebef135e0f645e99d59d9bf44e7711606c"
+  },
+  "notes": "SwarmCoreIMD (SWARMCORE) is a fixed-supply ERC-20 built on OpenZeppelin Contracts v5.4.0 ERC20, used unmodified. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 tokens (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which on this launch is the ProjectFactory; INITIAL_HOLDER records that address. There is no owner, minter, pause, blacklist, freeze, fee, burn hook, reflection or vesting: after construction the contract has no privileged function, the supply can never grow, and every transfer moves exactly the amount requested, so the factory's transfer to the MerkleDistributor, the single-sided pool seed through the Uniswap v4 PoolManager, the forward of the remainder to economics.remainderTo, distributor claims and trader swaps each arrive whole. The runtime contains no DELEGATECALL, CALLCODE or SELFDESTRUCT and no linked libraries. The launch deploys no application contracts. Pool is paired with IMD at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7 at the launch policy's 1.25% fee with tick spacing 60; initialPrice is provenance only, the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
